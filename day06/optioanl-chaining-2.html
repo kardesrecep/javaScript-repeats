@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+
+
+const house = {
+  rooms: 3,
+  floors: {
+    firstFloor: {
+      livingRoom: 'Yes',
+      kitchen: 'Yes'
+    },
+    secondFloor: {
+      bedroom: 'Yes',
+      bathroom: 'Yes'
+    }
+  }
+};
+// Using optional chaining to access house.floors.secondFloor.bathroom property
+const bathroom = house?.floors?.secondFloor?.bathroom;
+console.log(bathroom); // Output: "Yes"
+// If the bathroom property is not defined, it will return undefined instead of throwing an error
+const attic = house?.floors?.thirdFloor?.attic;
+console.log(attic); // Output: undefined
+    </script>
+
+
+</body>
+</html>

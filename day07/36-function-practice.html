@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <input type="number" id="txtNum">
+    <button onclick="calculate()">Calculate</button>
+    <h3 id="sonuc"></h3>
+    <script>
+        function calculate(){
+
+            let num =parseInt( document.querySelector("#txtNum").value);
+            let sonuc=document.querySelector("#sonuc");
+            sonuc.innerHTML=isPrimeNumber(num) ? "Prime Number" : "Not Prime Number";
+        }
+        
+        function isPrimeNumber(num){
+            
+            if(!num || isNaN(num) || num<2) return false;
+            let result = true;
+            for(let i=2; i<num; i++){
+                if(num % i === 0){
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
