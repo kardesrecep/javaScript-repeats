@@ -7,20 +7,27 @@
     <title>Functions</title>
 </head>
 <body>
-    <input type="number" id="txtNum">
+    <input type="text" id="txtNum">
     <button onclick="calculate()">Calculate</button>
-    <h3 id="sonuc"></h3>
     <script>
+        const txtNum = document.querySelector("#txtNum")
         function calculate(){
-
-            let num =parseInt( document.querySelector("#txtNum").value);
-            let sonuc=document.querySelector("#sonuc");
-            sonuc.innerHTML=isPrimeNumber(num) ? "Prime Number" : "Not Prime Number";
+            const result = isPrimeNumber(txtNum.value);
+            if(result==="error"){
+                alert("Please enter a valid number");
+                txtNum.value="";
+                txtNum.focus();
+                return;
+            }
+            alert(`The number you entered is ${result ? 'prime' : 'not prime'}`);
         }
+       
         
         function isPrimeNumber(num){
             
-            if(!num || isNaN(num) || num<2) return false;
+            if(!num || isNaN(num) || num<2){
+                return "error";
+            } 
             let result = true;
             for(let i=2; i<num; i++){
                 if(num % i === 0){
