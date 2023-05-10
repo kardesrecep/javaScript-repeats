@@ -13,17 +13,17 @@
     <div class="container mt-4">
         <div class="mb-3">
             <select class="form-select form-select-lg" id="ddlCar" size="5">
-                <option selected>Select one</option>
-                <option value="">New Delhi</option>
-                <option value="">Istanbul</option>
-                <option value="">Jakarta</option>
+                
             </select>
         </div>
-        <h3 class="mb-3">
-            2023
+        <h3 class="mb-3" id="lblCarValue">
+            
         </h3>
     </div>
     <script>
+        const ddlCar = document.querySelector("#ddlCar");
+        const lblCarValue = document.querySelector("#lblCarValue");
+        
         const car = {
             brand: "Audi",
             model: "A4",
@@ -35,6 +35,19 @@
             transmission: "Automatic",
             price: 50000
         }
+        ddlCar.addEventListener("change", (e)=>{
+            const carKey = e.target.value;
+            lblCarValue.innerHTML = car[carKey];
+        });
+        const fillCarList = () => { 
+            const carKeys = Object.keys(car);
+            
+            for(let i=0; i<carKeys.length; i++){
+                //console.log(carKeys[i]);
+                ddlCar.innerHTML += `<option>${carKeys[i]}</option>`;
+            }
+        }
+        fillCarList();
         
     </script>
 </body>
