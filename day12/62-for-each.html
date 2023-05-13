@@ -12,16 +12,32 @@
         const animals = ["fil", "kuş", "deve", "fare", "aslan", "kartal"];   
         
         // callback function
-        const cb = (animal) => {
-            console.log(animal);
-        }
-        animals.forEach(cb);
+        const cb = (item) => { 
+//console.log(param)
+         };
+    // animals.forEach(cb);
 
+    
         
         // FOREACH KISA YÖNTEM
-        animals.forEach( (animal, i)=>{
-            console.log(i, animal);
-        } )
+        animals.forEach((item,index)=>{
+            console.log(index,item)
+
+        })
+
+
+        //Ex-1
+
+        const arr=[-5,-2,4,13,7];
+
+        const newArr=[];
+
+        arr.forEach((item, index)=>{
+            newArr[index]= item*5;
+        })
+        console.log(newArr)
+
+  
         
     </script>
 </body>

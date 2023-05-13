@@ -10,20 +10,35 @@
 
 
     <script>
-  const animals = ["fil", "kuş", "deve", "fare", "aslan", "kartal"]; 
+  const animals = ["fil", "kuş", "deve","Pars", "fare", "aslan", "kartal"]; 
   
-  const cb = (key) => { 
-    console.log(key)
-   }
-   animals.map(cb)
+  //callback methodu
 
-   //Kisa Yontem
+const mp = (key) => { 
+  console.log(key)
+
+}
+animals.map(mp);
+
+//Kisa Yontem
+//Mevcut elemanlari degistirerek yeni bir dizi dondurur
+
+const newAnimals= animals.map((item)=>{
+  if(item.startsWith("P")){
+return item.toUpperCase()
+  }else{
+    return item;
+  }
+})
+console.log(newAnimals)
+
+
+
+
+
 
   
- const newAnimals=animals.map((key)=>{
-    return key.toUpperCase();
 
-   })
 
 
     </script>
