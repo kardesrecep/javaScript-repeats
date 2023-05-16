@@ -19,31 +19,53 @@
     </main>
     
     <script>
-        const spanEls = document.querySelectorAll(".list li span");
-        
-        spanEls.forEach( (span)=> { 
-            span.addEventListener("click", (e)=> {
-                const li = e.target.closest("li");
-                li.style.backgroundColor = "yellow";
+        const spanEls=document.querySelectorAll(".list li span")
+        spanEls.forEach((span)=>{
+            span.addEventListener("click",(e)=>{
+                const li=e.target.closest("li")
+                li.style.backgroundColor="yellow"
+                //closest parentlerde arar, parent yapisi icinde olamayanlara 
+                //ortak parentler uzerinden erisir
+                const header=document.querySelector("list li:nth-child(4)").closest("body").querySelector("header")
+
+                
             })
-        } )
-        // closest parentlarda arar, parent yapısı içinde olmayan elemanlara ortak parent üzerinden erişilebilir.
-        const header = document.querySelector(".list li:nth-child(4)").closest("body").querySelector("header");
-        console.log(header);
-        //children
-        const employeeList = document.getElementById("employeeList");
-        console.log(employeeList); 
+        })
+
+           //children
+        const employeeList=document.getElementById("employeeList");
         console.log(employeeList.children);
-        // childNodes
-        // içinde element, text, attribute, comment gibi çok farklı yapıları bulundurur.
-        console.log(employeeList.childNodes);
-        console.log(employeeList.firstElementChild);
-        console.log(employeeList.lastElementChild);
-        console.log(employeeList.parentElement.parentElement);
-        const li3 = document.querySelector("#employeeList li:nth-child(3)");
-        console.log(li3.previousElementSibling);
-        console.log(li3.nextElementSibling);
-        
+
+        //childNodes
+        //icinde element, text, attribute,comment gibi farkli yapilari bulundurur
+
+    console.log(employeeList.childNodes)
+
+    //lastChild
+    console.log(employeeList.lastChild)
+
+    //firstChild
+    console.log(employeeList.firstChild)
+
+
+    //parentelement
+    console.log(employeeList.parentElement)
+
+    //nextElementSbling
+
+    const li3=document.querySelector("#employeeList li:nth-child(3)")
+    console.log(li3.nextElementSibling)
+
+    //previousElementSbling
+    console.log(li3.previousElementSibling)
+
+
+     
+
+
+
+
+     
     </script>
 </body>
 </html>
