@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        "use strict";
+        a=5;
+
+
+    
+ function exampleFunction() {
+  x = 10; // Bu satırda "ReferenceError" alınır 
+  //cünkü x değişkeni tanımlanmadı.
+}
+
+
+let x = 10;
+delete x; // Bu satırda "SyntaxError" alınır,
+// çünkü x sabit degiskendir ve silinemez.
+
+
+const obj = {};
+Object.defineProperty(obj, 'x', { value: 100, writable: false });
+obj.x = 200;  // Bu satırda "TypeError" alınır,
+// çünkü x değiştirilemez olarak tanımlandı.
+    </script>
+    
+</body>
+</html>
