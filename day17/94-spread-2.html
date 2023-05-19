@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+</head>
+<body>
+    
+
+    <script>
+        let cities = ["Ankara", "İstanbul", "London", "Helsinki", "Tokyo"];
+        console.log(cities);
+        cities = ["Zurih", ...cities, "Marsilya"];
+        console.log(cities);
+
+
+        let countries1 = ["Germany", "Denmark", "Italy", "France"];
+
+        let countries2 = ["Turkey", "China", "Russia", "Germany"];
+
+        let countries = [...countries1, "Belgium", ...countries2];
+        console.log(countries);
+
+        // new Set, dizideki tekrar eden aynı elemanları
+        // silip hepsinden tek olacak hale getirir
+        
+        let uniqueCountries =[...new Set(countries2)]
+        console.log(uniqueCountries);
+
+
+        //concatenating
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 =[...arr1,...arr2, "69"]
+
+console.log(arr3);
+
+// clonning
+
+let a=["Apple",'Banan','Stawberry']
+
+let b=[...a]
+console.log(b)
+
+// Passing function
+
+const sum2= (a,b)=>{
+    return a+b
+}
+ const arr4=[1,2,3];
+
+ 
+ sum2(...arr4)
+ 
+
+console.log( sum2(...arr4)) 
+
+//Constructing objects
+
+const obj1 = { x: 1, y: 2 };
+const obj2 = { z: 3 };
+ // Concatenate all the keys and values in obj1 and obj2
+const obj3 = { ...obj1, ...obj2 };
+
+ // Convert the keys of obj3 to uppercase and the values to double their original values
+
+ //Object.fromEntries() objeyi arraya cevirmek icn kullanildi
+const obj4 = Object.fromEntries(Object.entries(obj3).map(([key, value]) => [key.toUpperCase(), value * 2]));
+ console.log(obj4); // { X: 2, Y: 4, Z: 6 }
+
+
+ 
+
+
+
+
+    </script>
+
+</body>
+</html>

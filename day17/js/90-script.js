@@ -1,6 +1,6 @@
 const ocPrivacy = new bootstrap.Offcanvas('#ocPrivacy');
 const isPrivacyPolicyAccepted= localStorage.getItem("privacy-policy")
-isPrivacyPolicyAccepted || ocPrivacy.show();
+isPrivacyPolicyAccepted ?? ocPrivacy.show();
 
 
 document.getElementById("btnAcceptPrivacy").addEventListener("click", ()=>{
