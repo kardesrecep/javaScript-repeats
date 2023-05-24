@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Chain</title>
+</head>
+<body>
+    
+    <script>
+
+
+const siparisVer=(callback)=>{
+       console.log("siparis verildi")
+    setTimeout(()=>{
+     console.log("siparis hazir")
+     callback()
+    },3000)
+}
+
+const yemekYe=(callback)=>{
+       console.log("yemege baslandi")
+    setTimeout(()=>{
+     console.log("yemek yendi")
+     callback()
+    },2000)
+}
+
+const filmIzle=()=>{
+       console.log("film basladi")
+    setTimeout(()=>{
+     console.log("film bitti")
+    },2000)
+}
+
+const misirYe=()=>{
+       console.log("misir yemeye baslandi")
+    setTimeout(()=>{
+     console.log("misir yendi")
+
+    },1500)
+}
+
+
+
+siparisVer(()=>{
+yemekYe(()=>{
+filmIzle();
+misirYe()
+});
+
+});
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

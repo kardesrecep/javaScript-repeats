@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 30,
+        eyeColor: "blue",
+        department: {
+          name: "IT",
+          floor: 3
+        }
+      };
+      // 1-Klasik yöntem
+      const message1 = `${person.firstName} ${person.lastName} isimli personel ${person.age}. yaşına girdi`;
+      console.log(message1);
+      // 2-Destructuring yöntemi
+      const { firstName, lastName, age, department } = person;
+      const { name, floor} = department;
+      const message2 = `${firstName} ${lastName} isimli personel ${age}. yaşına girdi. ${name}  departmanında çalışıyor`;
+      console.log(message2);
+
+
+
+let person2={
+    firstName:"Ali",
+    lastName:"Khan",
+    age:20,
+    eyeColor:"Blue",
+    gender:"Male",
+    isMarried:true,
+    address:{
+        city:"Karachi",
+        state:"Sindh"
+    }
+
+}
+
+const message3= `${person2.firstName} ${person2.age}`
+console.log(message1)
+
+//destructuring
+let {address}=person2
+console.log(firstName,lastName,age)
+
+//address ikinci bir obje oldugu icin bunu tekrardan acip yazdirdik
+const {state,city}=address
+console.log(state,city)
+
+
+
+    </script>
+    
+</body>
+</html>
